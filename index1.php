@@ -66,14 +66,5 @@
         <h1 id="mults"></h1>
     </div>
 </div>
-<div id="test">
-    <p id="test0"></p>
-    <p id="test1"></p>
-    <p id="test2"></p>
-    <p id="test3"></p>
-    <p id="test4"></p>
-    <p id="test5"></p>
-    
-</div>
 </body>
 </html>
