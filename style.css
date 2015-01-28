@@ -1,0 +1,110 @@
+body {
+  background: -webkit-radial-gradient(#7e8588, #4d5457);
+  width: 100%;
+  height: 50%;
+}
+h1 {
+  font-size: 20px;
+  color: #ddd;
+}
+h2 {
+    font-size:25px;
+    color: #dadada;
+}
+p {
+  color: #ddd;
+}
+div {
+  width: 300px;
+  height: 80px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  border-color: rgba(221,221,221, 0.5);
+  color: #fff;
+  margin: 10px;
+  text-align: center;
+  font-weight: 800;
+  box-shadow: inset 1px 1px 10px #363636;
+}
+
+#container {
+    width: 644px;
+    height: 294px;
+    box-shadow: 1px 1px 10px #363636;
+}
+#result {
+    position:relative;
+    left: 660px;
+    top: -576px;
+    width: 324px;
+    height: 428px;
+    box-shadow: 1px 1px 10px #363636;
+}
+#gateselect {
+    width: 315px;
+    height: 120px;
+    box-shadow: 1px 1px 10px #363636;
+}
+#spinselect {
+    position: relative;
+    left: 330px;
+    top: -134px;
+    width: 315px;
+    height: 120px;
+    box-shadow: 1px 1px 10px #363636;
+}
+
+#repd,#ldisksd,#gatesd {
+  position: relative;
+  left: 320px;
+  top: -281px;
+}
+#spinsd {
+  position: relative;
+
+  height: 110px;
+}
+#gate {
+  position: relative;
+
+  height: 156px;
+}
+#multi {
+  position: relative;
+
+  height: 110px;;
+}
+#gateinput {
+  position: relative;
+  top: -694px;
+  height: 120px;
+}
+#spinsinput {
+  position: relative;
+  left: 320px;
+  top: -560px;
+  height: 120px;
+}
+input[type="text"] {
+  border: 1px solid rgba(221,221,221, 0.5);;
+  border-radius: 3px;
+  color: #fff;
+  background-color: transparent;
+  margin-bottom: 8px;
+}
+input[type="submit"] {
+  border: 1px solid rgba(221,221,221, 0.7);;
+  border-radius: 3px;
+  color: #fff;
+  background-color: transparent;
+  margin: 5px;
+}
+#test {
+    position: relative;
+    top: -560;
+    height: 150px;
+}
+#test0,#test1,#test2,#test3,#test4,#test5,#test6,#test7 {
+  position: relative;
+  top: -px;
+}
