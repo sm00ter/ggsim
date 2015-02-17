@@ -1,0 +1,47 @@
+function start(){
+        $("#error").text("");
+        var balance = $("#balance").val();
+        if (balance === "") {
+            $("#error").text("Please specify the Loan Balance.");
+        }
+        var term = $("#termofloan").val();
+        if (term === "") {
+            $("#error").text("Please specify the Term of Loan.");
+        }
+        var termUnits = $('input[name="term"]:checked').val();
+        if (termUnits === "years") {
+            term = term*12;
+        }else if (termUnits === undefined) {
+            $("#error").text("Please specify whether the term is in months or years.");
+        }
+        var rate = $("#rate").val();
+        if (rate === "") {
+            $("#error").text("Please specify the Interest Rate.");
+        }
+        var startMonth = $("#month").val();
+        var startYear = $("#startyear").val();
+        if (startYear === "") {
+            $("#error").text("Please specify the Starting Year.");
+        }
+        var error = $("#error").text();
+        if (error === "") {
+            build(balance,term,rate,startMonth,startYear);
+        }
+
+};
+
+function build(balance,term,rate,startMonth,startYear){
+    if (window.XMLHttpRequest) {
+        buildTable= new XMLHttpRequest();
+    }else{
+        buildTable = new activeXObject("Microsoft.XMLHTTP");
+    }
+    buildTable.onreadystatechange = function(){
+        if(buildTable.readyState == 4 && buildTable.status == 200){
+            document.getElementById("table").innerHTML = buildTable.responseText;
+        }
+    }
+    buildTable.open("POST", "buildSchedule.php", true);
+    buildTable.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    buildTable.send("bal="+balance+"&term="+term+"&rate="+rate+"&sm="+startMonth+"&sy="+startYear);
+}
