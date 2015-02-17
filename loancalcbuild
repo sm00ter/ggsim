@@ -1,0 +1,74 @@
+<?php
+//build schedule table and return it.
+$bal = $_POST['bal'];
+$term = $_POST["term"];
+$rate = $_POST["rate"];
+$startMonth = $_POST["sm"];
+$startYear = $_POST["sy"];
+/*payment  per monthformula = M=P*(J/(1-(1+J)^-N))
+ *where m = monthly payment
+ *where p = loan amount
+ *where j = interest rate
+ *where n = number of months
+ *
+ *interest per month = (interest/12)*balance)
+ *
+ *principal per month = (interest per month - payment per month)
+ */
+$loanAmount = (int)$bal;
+$monthlyPay = 0;
+$interest = ($rate/100)/12;
+
+$result = "<tr><th class='date'>Date of Payment</th><th>Monthly Payment</th><th>Principal</th><th>Total Principal</th><th>Interest</th><th>Total Interest Payed</th><th>Balance</th></tr>";
+
+//<tr><td class='date'>" . $dateOfPay . "</td><td>" . $monthlyPay . "</td><td>" . $prinicipal . "</td><td>" . $interest . "</td><td>" . $totalInterest . "</td><td>" . $balance . "</td></tr>";
+
+//calculate payments per month
+$monthlyPay = $loanAmount*($interest/(1-(1+$interest)**-$term));
+
+$months = array("January","February","March","April","May","June","July","August","September","October","November","December");
+//build first entry
+$month = $startMonth;
+$year = (int)$startYear;
+$date = $months[$month -1] . " " . $year;
+$monthlyInterest = $interest*(int)$bal;
+$principal = $monthlyPay - $monthlyInterest;
+$totalInterest = $monthlyInterest;
+$balance = ((int)$bal)-$principal;
+$totalPrincipal = $principal;
+$result .= "<tr><td>".$date."</td><td>$".roundNum($monthlyPay)."</td><td>$".roundNum($principal)."</td><td>$".roundNum($totalPrincipal)."</td><td>$".roundNum($monthlyInterest)."</td><td>$".roundNum($totalInterest)."</td><td>$".roundNum($balance)."</td></tr>";
+//build the rest of the results
+for($i = 1;$i < $term; $i++){
+    //new date
+    if($month < 12){
+        $month++;
+    }else{
+        $month = 1;
+        $year++;
+    }
+    $date = $months[$month -1]." ".$year;
+    //new monthlyinterest
+    $monthlyInterest = $interest*$balance;
+    
+    //new monthlyprincipal
+    $principal = $monthlyPay-$monthlyInterest;
+    //new totalinterest
+    $totalInterest += $monthlyInterest;
+    //new balance
+    $balance -= $principal;
+    $totalPrincipal +=$principal;
+    if($i == $term -1){
+        $balance = 0.00;
+    }
+    //add entry to result
+    $result .= "<tr><td>".$date."</td><td>$".roundNum($monthlyPay)."</td><td>$".roundNum($principal)."</td><td>$".roundNum($totalPrincipal)."</td><td>$".roundNum($monthlyInterest)."</td><td>$".roundNum($totalInterest)."</td><td>$".roundNum($balance)."</td></tr>";
+}
+echo $result;
+
+function roundNum($num){
+    $num = round($num, 2);
+    return $english_format_number = number_format($num);
+}
+
+
+?>
