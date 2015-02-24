@@ -1,7 +1,7 @@
 body {
   background: -webkit-radial-gradient(#7e8588, #4d5457);
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 h1 {
   font-size: 20px;
@@ -20,13 +20,12 @@ div {
   border: 2px solid transparent;
   border-radius: 5px;
   border-color: rgba(221,221,221, 0.5);
-  color: #fff;
+  color: #ddd;
   margin: 10px;
   text-align: center;
   font-weight: 800;
   box-shadow: inset 1px 1px 10px #363636;
 }
-
 #container {
     width: 644px;
     height: 294px;
@@ -35,25 +34,24 @@ div {
 #result {
     position:relative;
     left: 660px;
-    top: -576px;
+    top: -612px;
     width: 324px;
-    height: 428px;
+    height: 446px;
     box-shadow: 1px 1px 10px #363636;
 }
 #gateselect {
     width: 315px;
-    height: 120px;
+    height: 138px;
     box-shadow: 1px 1px 10px #363636;
 }
 #spinselect {
     position: relative;
     left: 330px;
-    top: -134px;
+    top: -152px;
     width: 315px;
-    height: 120px;
+    height: 138px;
     box-shadow: 1px 1px 10px #363636;
 }
-
 #repd,#ldisksd,#gatesd {
   position: relative;
   left: 320px;
@@ -62,17 +60,41 @@ div {
 #spinsd {
   position: relative;
 
-  height: 110px;
+  height: 115px;
 }
 #gate {
   position: relative;
 
-  height: 156px;
+  height: 158px;
 }
 #multi {
   position: relative;
-
-  height: 110px;;
+  padding: 10px;
+  height: 100px;
+  width: 280px;
+  text-align: left;
+}
+#multipliers {
+    margin-top: 0;
+}
+#mults {
+    position: relative;
+    left: 35px;
+    width: 60px;
+    text-align: center;
+}
+#multselect0 {
+    position: relative;
+    left: 45px;
+    float: right;
+    font-size: 15px;
+}
+#multiselect1 {
+    position: relative;
+    top: -60px;
+    left: -20px;
+    text-align: center;
+    float:right;
 }
 #gateinput {
   position: relative;
@@ -88,19 +110,118 @@ div {
 input[type="text"] {
   border: 1px solid rgba(221,221,221, 0.5);;
   border-radius: 3px;
-  color: #fff;
+  color: #f1f1f1;
   background-color: transparent;
   margin-bottom: 8px;
+  padding-left: 3px;
 }
-input[type="submit"] {
+input[type="submit"], #multselect{
   border: 1px solid rgba(221,221,221, 0.7);;
   border-radius: 3px;
-  color: #fff;
+  color: #f1f1f1;
   background-color: transparent;
   margin: 5px;
+}
+input[type="radio"]  {
+    vertical-align: -2px;
 }
 #test {
     position: relative;
     top: -560;
     height: 150px;
+}
+#gsname {
+    margin-bottom: 8px;
+}
+/*=====================================================*/
+#dbcontainer {
+    position:relative;
+    width: 986px;
+    height: 400px;
+    box-shadow: 1px 1px 10px #363636;
+}
+#dbgateselect{
+    position: relative;
+    top: -10px;
+    padding: 5px;
+    width: 290px;
+    height: 60px;
+}
+#dbinputs {
+    position:relative;
+    top: -10px;
+    width: 290px;
+    height: 200px;
+    padding: 5px;
+}
+#dbspins, #dbgatestobuild {
+    width: 210px;
+}
+#dbmultselect {
+    position: relative;
+    top: -19px;
+}
+.inputp {
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+#abyradio {
+    position: relative;
+    top: 6px;
+    margin-bottom: 13px;
+}
+input[type="text"]:disabled {
+    color: #aaa;
+}
+#average {
+    position: relative;
+    left: 5px;
+    width: 35px;
+}
+#dbsubmit {
+    position: relative;
+    top: -40px;
+}
+#dbresult {
+    float: right;
+    top: -20px;
+    position:relative;
+    width: 630px;
+    height: 307px;
+    text-align: left;
+    padding: 10px;
+}
+#dbresult h1 {
+    font-size: 18px;
+    margin: 5px 5px;
+}
+#dbresult p {
+    font-size: 14px;
+    margin: 5px 5px;
+    text-align: center;
+}
+#dbresult div {
+    border: none;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    float: left;
+    text-align: left;
+    margin-top: 0px;
+}
+
+#dbtable {
+    float: right;
+    width: 300px;
+    height: 700px;
+}
+
+#numGates {
+    margin: 0;
+    display: none;
+}
+
+#numSpins {
+    margin: 0;
+    display:initial
 }
