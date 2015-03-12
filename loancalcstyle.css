@@ -1,0 +1,65 @@
+.widget {
+    position: absolute;
+    left: 65%;
+    top: 10%;
+    font-family: 'PT Sans',sans-serif;
+    width: 260px;
+    height: auto; /*315*/
+    border: 1px solid #DDD;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 0.8em;
+}
+.widget h1, .widget h2 {
+    margin: 8px;
+    margin-bottom: 2px;
+}
+.widget h1 {
+    background: #35178e;
+    padding: 5px;
+    color: white;
+    border-radius: 6px;
+}
+.box2 input[type="text"], .box4 input[type="text"] {
+    width: 70px;
+}
+.widget input[type="submit"] {
+    margin: 7px;
+    background: #35178e;
+    color: white;
+    border: 1px solid #35178e;
+    padding: 4px;
+    border-radius: 4px;
+}
+.schedule {
+    text-align: center;
+    position: relative;
+    left: 20%;
+    width: auto;
+    max-width: 800px;
+    
+}
+.schedule table {
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+.schedule table, .schedule th, .schedule tr, .schedule td {
+    border: 1px solid #EDEDED;
+    border-collapse: collapse;
+    padding: 3px 6px;
+}
+
+.schedule th {
+    background: #35178e;
+    color: white;
+    font-weight: 600;
+ }
+ .schedule .date {
+    min-width: 110px;
+ }
+ #error {
+    color: red;
+    margin: 0;
+    margin-bottom: 4px;
+ }
